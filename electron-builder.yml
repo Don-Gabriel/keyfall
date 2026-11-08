@@ -3,6 +3,7 @@ productName: Keyfall
 directories:
   output: release/mac
 files:
+  - '!node_modules/**/*'
   - dist/**/*
   - desktop/main.cjs
   - package.json
