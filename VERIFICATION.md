@@ -1,3 +1,18 @@
+# Keyfall 0.5.0 verification
+
+This release adds native Android/iOS projects, a sandboxed Electron macOS shell, native MIDI-file sharing, and mobile lifecycle/navigation handling. Windows remains the primary platform.
+
+- 34 Node tests passed; the production build passed.
+- Current browser checks passed for playback/import/audio (14 groups), navigation (8), Free play separation (4), and UX regressions (6), with no uncaught browser errors.
+- Four native Android check groups passed on a dedicated Android 15 emulator with WebView 124: secure local origin, touch audio measured at the output, recording/save, one-time welcome hint, valid MIDI export through the system share sheet, Back navigation, background pause, and landscape keyboard/record-control visibility. The release APK signature was verified independently with Android's apksigner.
+- The Electron shell smoke check passed locally on Windows and on the macOS CI runner: secure origin, persistent storage, 88 keys, 88 bundled samples, Free play navigation and audio context startup.
+- [GitHub Actions run 42499939920](https://github.com/Don-Gabriel/keyfall/actions/runs/42499939920) passed all four jobs: core, Android compilation, universal macOS packaging and iOS simulator compilation.
+- The macOS app is unsigned and not notarized. The iOS build is a simulator compilation check, not a signed IPA or a physical-device test. Android USB MIDI is not implemented. Physical MIDI hardware and device-specific audio latency remain unverified.
+
+Native Android checks are in `tests/native-android.mjs`; use Playwright's experimental Android API with a dedicated debug emulator. Set `KEYFALL_ANDROID_SERIAL` if the emulator differs from the default, and optionally `PLAYWRIGHT_MODULE` to an existing Playwright installation.
+
+Earlier release verification follows for context.
+
 # Keyfall 0.4.2 verification
 
 This update fixes the recurring Free play welcome hint and a broader set of reproducible interaction issues. The hint dismisses on the first piano input and stays dismissed for the rest of that app session, including releases, settings, recording and returning to Free play.

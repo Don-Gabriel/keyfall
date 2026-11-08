@@ -1,0 +1,33 @@
+name: Attach verified Mac package
+on:
+  workflow_dispatch:
+    inputs:
+      build_run_id:
+        description: Successful Verify and package run ID
+        required: true
+        type: string
+      tag:
+        description: Existing draft release tag
+        required: true
+        type: string
+permissions:
+  contents: write
+  actions: read
+jobs:
+  attach:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download verified artifact and attach to draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BUILD_RUN_ID: ${{ inputs.build_run_id }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          [[ "$BUILD_RUN_ID" =~ ^[0-9]+$ ]]
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          test "$(gh run view "$BUILD_RUN_ID" --json conclusion --jq .conclusion)" = success
+          test "$(gh release view "$RELEASE_TAG" --json isDraft --jq .isDraft)" = true
+          gh run download "$BUILD_RUN_ID" --name keyfall-macos --dir artifact
+          sha256sum artifact/*.zip > artifact/macos-SHA256SUMS.txt
+          gh release upload "$RELEASE_TAG" artifact/*.zip artifact/macos-SHA256SUMS.txt --clobber

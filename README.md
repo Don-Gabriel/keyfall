@@ -10,18 +10,20 @@ No account, subscription, cloud service, or paid API is needed to play. Audio as
 
 ## Downloads
 
-The first public **v0.5.0** release is being verified. Download links will appear here when the corresponding artifacts have been built and checked. Do not use source archives as installers.
+Download **v0.5.0** below. Windows is the primary release; Android and macOS are previews. Use the platform package, not GitHub's source archives, to install.
 
 | Platform | Status | Notes |
 |---|---|---|
-| Windows x64 | Installer being packaged | Windows 10/11; Chrome or Edge required. Bundled Node runtime; no development tools needed. |
-| Android | Signed APK preview being built | Offline touch piano. USB MIDI, watched folders and printing are desktop-only. |
-| macOS | Universal app build in progress | Intel and Apple Silicon; unsigned and not notarized. |
-| iPhone / iPad | Source project included; no installable IPA | Apple signing/provisioning is required for distribution. Simulator builds are not iPhone installers. |
+| Windows x64 | [Download installer (.exe)](https://github.com/Don-Gabriel/keyfall/releases/download/v0.5.0/Keyfall-Setup-0.5.0-x64.exe) | Windows 10/11; Chrome or Edge required. Bundled Node runtime; no development tools needed. |
+| Android | [Download signed preview (.apk)](https://github.com/Don-Gabriel/keyfall/releases/download/v0.5.0/Keyfall-0.5.0-Android.apk) | Offline touch piano. USB MIDI, watched folders and printing are desktop-only. |
+| macOS | [Download universal preview (.zip)](https://github.com/Don-Gabriel/keyfall/releases/download/v0.5.0/Keyfall-0.5.0-macOS-universal.zip) | Intel and Apple Silicon; unsigned and not notarized. |
+| iPhone / iPad | [iOS source project](ios/); no installable IPA | Simulator compilation passed. Apple signing/provisioning and device testing are still required for distribution. |
 
 [All releases](https://github.com/Don-Gabriel/keyfall/releases) · [Report a bug](https://github.com/Don-Gabriel/keyfall/issues)
 
 The Windows installer runs per user and supports uninstall. Preview packages are early builds: compilation or an emulator check does not certify every device. The release notes identify which checks were actually run.
+
+Windows and macOS packages are not publisher-signed; Android is signed with the project's release key and is distributed directly, outside Google Play. Follow your operating system's security prompts only for a download you trust. Release assets include SHA-256 checksums for file verification.
 
 ## What you can do
 
