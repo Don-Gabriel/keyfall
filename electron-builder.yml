@@ -1,0 +1,21 @@
+appId: io.github.dongabriel.keyfall
+productName: Keyfall
+directories:
+  output: release/mac
+files:
+  - dist/**/*
+  - desktop/main.cjs
+  - package.json
+  - LICENSE
+  - LICENSES.txt
+  - THIRD-PARTY-NOTICES.md
+  - README.md
+asar: true
+npmRebuild: false
+mac:
+  category: public.app-category.music
+  target:
+    - target: zip
+      arch: [universal]
+  identity: null
+  artifactName: Keyfall-${version}-macOS-universal.zip

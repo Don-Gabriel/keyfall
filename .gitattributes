@@ -1,0 +1,9 @@
+* text=auto
+android/gradlew text eol=lf
+*.sh text eol=lf
+*.png binary
+*.sf2 binary
+*.ico binary
+*.jar binary
+LICENSES.txt -whitespace
+public/spessasynth_processor.min.js -whitespace

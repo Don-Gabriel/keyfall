@@ -1,0 +1,8 @@
+{
+  "appId": "io.github.dongabriel.keyfall",
+  "appName": "Keyfall",
+  "webDir": "dist",
+  "server": { "androidScheme": "https" },
+  "android": { "backgroundColor": "#26323b" },
+  "ios": { "backgroundColor": "#26323b", "contentInset": "automatic" }
+}

@@ -1,0 +1,27 @@
+/* Native shells keep touch controls and the piano above system navigation. */
+body.native-app { padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+.native-app #app { height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom)); min-height: 0; }
+.native-app #home-devices,.native-app #midi-button,.native-app #fullscreen,.native-app #score-print,.native-app #keyboard-hint,.native-app #octave-label,.native-app #import-folder { display: none!important; }
+.native-app .choice-trigger,.native-app .practicebar button { min-height: 44px; }
+@media(max-height:600px) and (orientation:landscape){
+  .native-app .toolbar {height:46px;padding:0 8px;gap:6px}
+  .native-app .toolbar button {min-height:36px;height:36px}
+  .native-app .toolbar .brand {display:none}
+  .native-app .songbar {min-height:48px;padding:4px 10px;flex-wrap:nowrap;gap:7px}
+  .native-app .song-title {min-width:70px;width:auto;flex:1;max-width:210px}
+  .native-app .song-title h1 {font-size:13px}
+  .native-app .song-title p,.native-app .songbar #sheet-button,.native-app .roll-legend {display:none}
+  .native-app .mode-group {order:initial;flex:0 1 auto}
+  .native-app .mode-group button {font-size:10px;min-height:32px;padding:4px 5px}
+  .native-app .hand-control {order:initial}
+  .native-app .hand-buttons button {min-height:32px;padding:4px}
+  .native-app .timeline {height:25px}
+  .native-app .keyboard {height:105px}
+  .native-app .instrument {min-height:110px}
+  .native-app .roll-wrap {min-height:35px}
+  .native-app .practicebar {min-height:46px;padding:2px 6px;gap:5px;flex-wrap:nowrap;overflow-x:auto;justify-content:space-between}
+  .native-app .practicebar .tools-group {flex-shrink:0}
+  .native-app .practicebar button {min-height:36px}
+  .native-app .practicebar>.tools-group:has(#loop-button),.native-app .practicebar>.tools-group:has(#metronome) {display:none}
+  .native-app footer {height:20px}
+}

@@ -1,0 +1,10 @@
+Keyfall 0.5.0 - Local piano practice
+
+This installer includes the application, an offline sampled grand piano, GeneralUser GS soundbank, sheet-music renderer, and the Node.js runtime. A separate Node.js installation, account, subscription, or internet connection is not needed to run the installed app.
+
+Requires 64-bit Windows 10 or later with Google Chrome or Microsoft Edge. Keyfall opens in a browser-powered application window and serves files only on this computer (127.0.0.1:5188).
+
+Imported songs and practice history remain in your browser profile. Export MIDI files for backups. Uninstalling Keyfall removes application files; browser library data is retained until you clear it in the browser.
+
+This is an independent functional alternative, not a complete feature-for-feature Synthesia clone. It supports custom SoundFonts and MIDI instruments. Device-specific lighted-keyboard support and advanced MusicXML playback are not implemented. See README.md for the feature list and limitations.
+
